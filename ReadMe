@@ -1,0 +1,18 @@
+Januchta Tomasz lab5
+
+Aplikacja webowa Wypożyczalni Samochodów
+
+Aplikacja potrafi:
+1. Dodawać, usuwać, edytować samochody.
+2. Dodawać, usuwać edytować klientów.
+3. Dodawać, usuwać, eydytować wypożyczenia.
+4. Logować na konto Admina.
+5. Logować na konto Usera.
+
+Login i hasło do konta Admina:
+admin@cars.com
+Cars@1234
+
+Login i hasło do konta Usera:
+user@cars.com
+Cars@1234
