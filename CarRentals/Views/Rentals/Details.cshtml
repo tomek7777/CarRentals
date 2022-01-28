@@ -1,0 +1,34 @@
+﻿@model Rental
+
+@{
+    ViewData["Title"] = "Add a new rental";
+}
+
+<div class="row text">
+    <div class="col-md-8 offset-2">
+        <p>
+            <h1>Details for @Model.CarId</h1>
+        </p>
+        <div class="col-md-8 offset-2">
+            <div class="form-group">
+                <label asp-for="CarId" class="control-label"></label>
+                <input asp-for="CarId" class="form-control" readonly />
+                <span asp-validation-for="CarId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClientId" class="control-label"></label>
+                <input asp-for="ClientId" class="form-control" readonly />
+                <span asp-validation-for="ClientId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                {
+                    <a class="btn btn-outline-success float-right" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+                }
+                    <a class="btn btn-outline-secondary" asp-action="Index">Show All</a>
+                </div>
+        </div>
+    </div>
+</div>
+
+}

@@ -1,0 +1,59 @@
+﻿@model Car
+
+@{
+    ViewData["Title"] = "Add a new car";
+}
+
+<div class="row text">
+    <div class="col-md-8 offset-2">
+        <p>
+            <h1>Add a New Car</h1>
+        </p>
+        <div class="col-md-8 offset-2">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Model" class="control-label"></label>
+                    <input asp-for="Model" class="form-control" />
+                    <span asp-validation-for="Model" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Mark" class="control-label"></label>
+                    <input asp-for="Mark" class="form-control" />
+                    <span asp-validation-for="Mark" class="text-danger"></span>
+                </div>
+                <div class="form-group text-center">
+                    <img id="PhotoPreview" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Photo" class="control-label"></label>
+                    <input asp-for="Photo" class="form-control" />
+                    <span asp-validation-for="Photo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description" class="control-label"></label>
+                    <input asp-for="Description" class="form-control" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Price" class="control-label"></label>
+                    <input asp-for="Price" class="form-control" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Avilable" class="control-label"></label>
+                    <input asp-for="Avilable" class="form-control" />
+                    <span asp-validation-for="Avilable" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-outline-success float-right" />
+                    <a class="btn btn-outline-secondary" asp-action="Index">Show All</a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+    }

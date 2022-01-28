@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Rental>
+
+@{
+    ViewData["Title"] = "List of Rentals";
+}
+
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+
+
+        <table class="table">
+            <thead>
+                <tr class="text-center">
+                    <th>@Html.DisplayNameFor(model => model.CarId)</th>
+                    <th>@Html.DisplayNameFor(model => model.ClientId)</th>
+                    <th>Actions</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+
+                        <td class="text-center">
+                            @Html.DisplayFor(modelItem => item.CarId)
+                        </td>
+                        <td class="text-center">
+                            @Html.DisplayFor(modelItem => item.ClientId)
+                        </td>
+                        <td style="position: absolute">
+                            <a class="btn btn-outline-info" asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-eye"></i>Details</a> 
+                            @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                            {
+                                <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i>Edit</a> 
+                                <a class="btn btn-danger text-white" asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash"></i>Delete</a>
+}
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+
+    </div>
+</div>
+
+<div style="position: fixed; right: 25px; bottom: 25px;" class="text-white">
+    <a asp-controller="Rentals" asp-action="Create" class="btn btn-success">
+        <i class="bi bi-plus-circle"></i> Add New
+    </a>
+</div>

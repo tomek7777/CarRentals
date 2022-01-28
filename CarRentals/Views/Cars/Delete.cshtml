@@ -1,0 +1,60 @@
+﻿@model Car
+
+@{
+    ViewData["Title"] = "Delete car";
+}
+
+<div class="row text">
+    <div class="col-md-8 offset-2">
+        <p>
+            <h1>Delete confirmation for @Model.Model</h1>
+        </p>
+        <div class="row">
+            <div class="col-md-8 offset-2">
+
+
+                <div class="form-group">
+                    <label asp-for="Model" class="control-label"></label>
+                    <input asp-for="Model" class="form-control" readonly />
+                    <span asp-validation-for="Model" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Mark" class="control-label"></label>
+                    <input asp-for="Mark" class="form-control" readonly />
+                    <span asp-validation-for="Mark" class="text-danger"></span>
+                </div>
+                <div class="form-group text-center">
+                    <img id="PhotoPreview" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Photo" class="control-label"></label>
+                    <input asp-for="Photo" class="form-control" readonly />
+                    <span asp-validation-for="Photo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description" class="control-label"></label>
+                    <input asp-for="Description" class="form-control" readonly />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Price" class="control-label"></label>
+                    <input asp-for="Price" class="form-control" readonly />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Avilable" class="control-label"></label>
+                    <input asp-for="Avilable" class="form-control" readonly />
+                    <span asp-validation-for="Avilable" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <form asp-action="Delete">
+                        <input type="hidden" asp_for="Id" />
+                        <input type="submit" value="Confirm" class="btn btn-danger float-right" />
+                    </form>
+                    <a class="btn btn-outline-secondary" asp-action="Delete">Show All</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+}

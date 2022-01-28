@@ -1,0 +1,37 @@
+﻿@model Rental
+
+@{
+    ViewData["Title"] = "Delete rental";
+}
+
+<div class="row text">
+    <div class="col-md-8 offset-2">
+        <p>
+            <h1>Delete confirmation for @Model.CarId</h1>
+        </p>
+        <div class="row">
+            <div class="col-md-8 offset-2">
+                <div class="form-group">
+                    <label asp-for="CarId" class="control-label"></label>
+                    <input asp-for="CarId" class="form-control" readonly />
+                    <span asp-validation-for="CarId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ClientId" class="control-label"></label>
+                    <input asp-for="ClientId" class="form-control" readonly />
+                    <span asp-validation-for="ClientId" class="text-danger"></span>
+                </div>        
+               
+                <div class="form-group">
+                    <form asp-action="Delete">
+                        <input type="hidden" asp_for="Id" />
+                        <input type="submit" value="Confirm" class="btn btn-danger float-right" />
+                    </form>
+                    <a class="btn btn-outline-secondary" asp-action="Delete">Show All</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
